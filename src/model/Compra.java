@@ -3,6 +3,9 @@ package model;
 import java.time.LocalDateTime;
 
 public class Compra {
+    // Constantes
+    final public static int TAM_NOTA_FISCAL = 13;
+
     // Atributos
     private String notaFiscal;
     private LocalDateTime data;
@@ -10,9 +13,9 @@ public class Compra {
     private ItemCompra[] itens;
 
     // Construtor
-    public Compra(String notaFiscal, Cliente cliente, ItemCompra[] itens) throws Exception {
+    public Compra(Cliente cliente, ItemCompra[] itens) throws Exception {
         this.setNotaFiscal(notaFiscal);
-        this.data = LocalDateTime.now();
+        this.setData();
         this.setCliente(cliente);
         this.setItens(itens);
     }
@@ -22,11 +25,15 @@ public class Compra {
         return notaFiscal;
     }
     public void setNotaFiscal(String notaFiscal) throws Exception {
+        
         this.notaFiscal = notaFiscal;
     }
 
     public LocalDateTime getData() {
         return data;
+    }
+    public void setData() throws Exception {
+        this.data = LocalDateTime.now();
     }
 
     public Cliente getCliente() {
@@ -42,6 +49,9 @@ public class Compra {
     public void setItens(ItemCompra[] itens) throws Exception {
         this.itens = itens;
     }
+
+    // Validações
+
 
     // Métodos
     public float getValorTotal() {
