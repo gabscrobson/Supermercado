@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Compra {
     // Constantes
@@ -10,10 +11,10 @@ public class Compra {
     private String notaFiscal;
     private LocalDateTime data;
     private Cliente cliente;
-    private ItemCompra[] itens;
+    private ArrayList<ItemCompra> itens;
 
     // Construtor
-    public Compra(Cliente cliente, ItemCompra[] itens) throws Exception {
+    public Compra(String notaFiscal, Cliente cliente, ArrayList<ItemCompra> itens) throws Exception {
         this.setNotaFiscal(notaFiscal);
         this.setData();
         this.setCliente(cliente);
@@ -25,7 +26,6 @@ public class Compra {
         return notaFiscal;
     }
     public void setNotaFiscal(String notaFiscal) throws Exception {
-        
         this.notaFiscal = notaFiscal;
     }
 
@@ -43,15 +43,14 @@ public class Compra {
         this.cliente = cliente;
     }
 
-    public ItemCompra[] getItens() {
+    public ArrayList<ItemCompra> getItens() {
         return itens;
     }
-    public void setItens(ItemCompra[] itens) throws Exception {
+    public void setItens(ArrayList<ItemCompra> itens) throws Exception {
         this.itens = itens;
     }
 
     // Validações
-
 
     // Métodos
     public float getValorTotal() {
