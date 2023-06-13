@@ -8,10 +8,10 @@ import model.Produto;
 public class Programa {
 
 	public static void main(String[] args) throws Exception {
-		Produto p = new Produto("1234567890123", "Arroz", 10);
-		Cliente c = new Cliente("12345678", "João", "Rua 1", "12345678");
-		System.out.println(p);
+		Cliente c = new Cliente("123.456.789-00", "Fulano", "Rua 1", "(22)99264-1163");
+		Produto p = new Produto("1234567890123", "Produto 1", 10);
 		System.out.println(c);
+		System.out.println(p);
 	}
 
 }
