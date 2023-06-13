@@ -42,4 +42,13 @@ public class Compra {
     public void setItens(ItemCompra[] itens) throws Exception {
         this.itens = itens;
     }
+
+    // Métodos
+    public float getValorTotal() {
+        float valorTotal = 0;
+        for (ItemCompra item : this.getItens()) {
+            valorTotal += item.getPrecoTotal();
+        }
+        return valorTotal;
+    }
 }

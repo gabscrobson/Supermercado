@@ -44,4 +44,8 @@ public class Cliente {
         this.telefone = telefone;
     }
 
+    // Métodos
+    public String toString() {
+        return this.getNome() + " - " + this.getCpf() + " - " + this.getEndereco() + " - " + this.getTelefone();
+    }
 }
