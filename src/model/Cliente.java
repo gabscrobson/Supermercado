@@ -3,7 +3,7 @@ package model;
 public class Cliente {
 	// Constantes
 	final public static int TAM_CPF = 14;
-	final public static int TAM_MIN_NOME = 6;
+	final public static int TAM_MIN_NOME = 2;
 	final public static int TAM_MAX_NOME = 40;
     final public static int TAM_ENDERECO = 50;
     final public static int TAM_TELEFONE = 14;
