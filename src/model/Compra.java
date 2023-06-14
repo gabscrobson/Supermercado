@@ -50,8 +50,6 @@ public class Compra {
         this.itens = itens;
     }
 
-    // Validações
-
     // Métodos
     public float getValorTotal() {
         float valorTotal = 0;
