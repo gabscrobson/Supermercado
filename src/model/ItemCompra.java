@@ -1,6 +1,8 @@
 package model;
 
-public class ItemCompra {
+import java.io.Serializable;
+
+public class ItemCompra implements Serializable{
     // Atributos
     private int quantidade;
     private float precoUnitario;

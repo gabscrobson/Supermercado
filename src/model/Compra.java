@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Compra {
+public class Compra implements Serializable {
     // Constantes
     final public static int TAM_NOTA_FISCAL = 13;
 

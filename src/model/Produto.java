@@ -1,6 +1,8 @@
 package model;
 
-public class Produto {
+import java.io.Serializable;
+
+public class Produto implements Serializable{
     // Constantes
     final public static int TAM_CODIGO_DE_BARRAS = 13;
     final public static int TAM_MIN_NOME = 2;

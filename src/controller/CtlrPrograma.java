@@ -25,8 +25,8 @@ public class CtlrPrograma {
 
 		// Teste de serialização
 		Cliente[] clientes = new Cliente[2];
-		clientes[0] = new Cliente("157.900.387-78", "Gabriel", "Rua 1", "(22)99264-1163");
-		clientes[1] = new Cliente("159.029.387-78", "João Gabriel", "Rua 2", "(21)99264-1163");
+		clientes[0] = new Cliente("157.900.387-77", "Lucas", "Rua 4", "(22)99364-1163");
+		clientes[1] = new Cliente("159.029.387-72", "Matheus", "Rua 3", "(21)98264-1163");
 		DaoCliente.incluirClientes(clientes);
 
 		for (Cliente cliente : DaoCliente.getClientes()) {
