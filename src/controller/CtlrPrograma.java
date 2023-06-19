@@ -1,20 +1,19 @@
 package controller;
 
-import javax.swing.JFrame;
-
 import model.Cliente;
 import model.Compra;
 import model.ItemCompra;
 import model.Produto;
 import model.dao.AbstractDao;
 import model.dao.DaoCliente;
+import viewer.JanelaPrincipal;
 
 public class CtlrPrograma {
 
 	public static void iniciar() {
 		AbstractDao.recuperarObjetos();
-		// JanelaPrincipal janela = new JanelaPrincipal(this);
-		// janela.setVisible(true);
+		JanelaPrincipal frame = new JanelaPrincipal();
+		frame.setVisible(true);
 	}
 
 	public static void encerrar() {
@@ -32,8 +31,6 @@ public class CtlrPrograma {
 		for (Cliente cliente : DaoCliente.getClientes()) {
 			System.out.println(cliente);
 		}
-
-		CtlrPrograma.encerrar();
 	}
 
 }
