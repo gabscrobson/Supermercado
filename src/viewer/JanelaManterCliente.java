@@ -5,13 +5,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 import javax.swing.JList;
 import java.awt.Color;
+import javax.swing.AbstractListModel;
 
 public class JanelaManterCliente extends JFrame {
 
@@ -47,9 +50,17 @@ public class JanelaManterCliente extends JFrame {
 		btnExcluir.setBounds(335, 227, 89, 23);
 		contentPane.add(btnExcluir);
 		
-		// String[] dados = {"1", "2", "3", "4", "5"};
-		// JList<String> list = new JList<String>(dados);
-		// list.setBounds(409, 205, -395, -171);
-		// contentPane.add(list);
+		JList list = new JList();
+
+		DefaultListModel listModel = new DefaultListModel();
+		listModel.addElement("Jane Doe");
+		listModel.addElement("John Smith");
+		listModel.addElement("Kathy Green");
+		list.setModel(listModel);
+		
+		list.setBackground(Color.WHITE);
+		list.setBounds(10, 11, 414, 205);
+		contentPane.add(list);
+		
 	}
 }

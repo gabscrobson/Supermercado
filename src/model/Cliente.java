@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
 	// Constantes
 	final public static int TAM_CPF = 14;
 	final public static int TAM_MIN_NOME = 2;
