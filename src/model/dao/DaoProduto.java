@@ -5,66 +5,6 @@ import java.util.ArrayList;
 import model.Produto;
 
 public class DaoProduto {
-    // Copilot do it like DaoCliente.java this
-    // // Atributos estáticos
-    // private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-
-    // // Métodos
-    // // Inclui uma lista de clientes na lista estática
-    // public static void incluirClientes(Cliente[] novaLista) throws Exception {
-    //     for (int i = 0; i < novaLista.length; i++) {
-    //         DaoCliente.clientes.add(novaLista[i]);
-    //     }
-    // }
-
-    // // Retorna uma cópia da lista de clientes
-    // public static Cliente[] getClientes() {
-    //     Cliente[] copia = new Cliente[DaoCliente.getNumClientes()];
-	// 	for(int i = 0; i < copia.length; i++)
-	// 		copia[i] = DaoCliente.getClienteIndice(i);
-	// 	return copia;
-    // }
-
-    // // Retorna o número de clientes cadastrados
-    // public static int getNumClientes() {
-    //     return DaoCliente.clientes.size();
-    // }
-
-    // // Retorna o cliente de um determinado índice
-    // public static Cliente getClienteIndice(int indice) {
-    //     return DaoCliente.clientes.get(indice);
-    // }
-
-    // // Retorna o cliente de um determinado CPF
-    // public static Cliente getClienteCpf(String cpf) {
-    //     for (Cliente cliente : DaoCliente.clientes) {
-    //         if (cliente.getCpf().equals(cpf)) {
-    //             return cliente;
-    //         }
-    //     }
-    //     return null;
-    // }
-
-    // // Exclui um cliente
-    // public static void excluirCliente(Cliente cliente) throws Exception {
-    //     if (DaoCliente.clientes.contains(cliente))
-    //         DaoCliente.clientes.remove(cliente);
-    //     else
-    //         throw new Exception("Cliente não encontrado!");
-    // }
-
-    // // Altera um cliente
-    // public static void alterarCliente(Cliente cliente) throws Exception {
-    //     Cliente clienteAntigo = DaoCliente.getClienteCpf(cliente.getCpf());
-    //     if (clienteAntigo != null) {
-    //         clienteAntigo.setNome(cliente.getNome());
-    //         clienteAntigo.setEndereco(cliente.getEndereco());
-    //         clienteAntigo.setTelefone(cliente.getTelefone());
-    //     }
-    //     else
-    //         throw new Exception("Cliente não encontrado!");
-    // }
-
     // Atributos estáticos
     private static ArrayList<Produto> produtos = new ArrayList<Produto>();
 
@@ -74,6 +14,11 @@ public class DaoProduto {
         for (int i = 0; i < novaLista.length; i++) {
             DaoProduto.produtos.add(novaLista[i]);
         }
+    }
+
+    // Inclui um produto na lista estática
+    public static void incluirProduto(Produto novoProduto) throws Exception {
+        DaoProduto.produtos.add(novoProduto);
     }
 
     // Retorna uma cópia da lista de produtos

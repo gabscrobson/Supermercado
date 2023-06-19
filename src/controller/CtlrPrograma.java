@@ -1,5 +1,7 @@
 package controller;
 
+import javax.swing.JFrame;
+
 import model.Cliente;
 import model.Compra;
 import model.ItemCompra;
@@ -24,10 +26,8 @@ public class CtlrPrograma {
 		CtlrPrograma.iniciar();
 
 		// Teste de serialização
-		Cliente[] clientes = new Cliente[2];
-		clientes[0] = new Cliente("157.900.387-77", "Lucas", "Rua 4", "(22)99364-1163");
-		clientes[1] = new Cliente("159.029.387-72", "Matheus", "Rua 3", "(21)98264-1163");
-		DaoCliente.incluirClientes(clientes);
+		DaoCliente.incluirCliente(new Cliente("157.900.387-77", "Pedro", "Rua 5", "(22)99264-1163"));
+		DaoCliente.incluirCliente(new Cliente("159.029.387-72", "Rosangela", "Rua 6", "(21)97264-1163"));
 
 		for (Cliente cliente : DaoCliente.getClientes()) {
 			System.out.println(cliente);

@@ -16,6 +16,11 @@ public class DaoCompra {
         }
     }
 
+    // Inclui compra na lista estática
+    public static void incluirCompra(Compra novaCompra) throws Exception {
+        DaoCompra.compras.add(novaCompra);
+    }
+
     // Retorna uma cópia da lista de compras
     public static Compra[] getCompras() {
         Compra[] copia = new Compra[DaoCompra.getNumCompras()];

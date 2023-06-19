@@ -16,6 +16,11 @@ public class DaoCliente {
         }
     }
 
+    // Inclui um cliente na lista estática
+    public static void incluirCliente(Cliente novoCliente) throws Exception {
+        DaoCliente.clientes.add(novoCliente);
+    }
+
     // Retorna uma cópia da lista de clientes
     public static Cliente[] getClientes() {
         Cliente[] copia = new Cliente[DaoCliente.getNumClientes()];
