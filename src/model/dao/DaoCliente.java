@@ -50,11 +50,8 @@ public class DaoCliente {
     }
 
     // Exclui um cliente
-    public static void excluirCliente(Cliente cliente) throws Exception {
-        if (DaoCliente.clientes.contains(cliente))
-            DaoCliente.clientes.remove(cliente);
-        else
-            throw new Exception("Cliente não encontrado!");
+    public static void excluirCliente(Cliente cliente) {
+        DaoCliente.clientes.remove(cliente);
     }
 
     // Altera um cliente

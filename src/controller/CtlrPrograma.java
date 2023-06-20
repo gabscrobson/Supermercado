@@ -12,12 +12,21 @@ public class CtlrPrograma {
 
 	public static void iniciar() {
 		AbstractDao.recuperarObjetos();
+		System.out.println("Iniciando programa...");
 		JanelaPrincipal frame = new JanelaPrincipal();
-		frame.setVisible(true);
+		frame.addWindowListener(
+			new java.awt.event.WindowAdapter() {
+				@Override
+				public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+					CtlrPrograma.encerrar();
+				}
+			}
+		);
 	}
 
 	public static void encerrar() {
 		AbstractDao.armazenarObjetos();
+		System.out.println("Encerrando programa...");
 		System.exit(0);
 	}
 
@@ -25,12 +34,8 @@ public class CtlrPrograma {
 		CtlrPrograma.iniciar();
 
 		// Teste de serialização
-		DaoCliente.incluirCliente(new Cliente("157.900.387-77", "Pedro", "Rua 5", "(22)99264-1163"));
-		DaoCliente.incluirCliente(new Cliente("159.029.387-72", "Rosangela", "Rua 6", "(21)97264-1163"));
-
-		for (Cliente cliente : DaoCliente.getClientes()) {
-			System.out.println(cliente);
-		}
+		// DaoCliente.incluirCliente(new Cliente("157.900.387-77", "Lucas", "Rua 5", "(22)99264-1163"));
+		// DaoCliente.incluirCliente(new Cliente("159.029.387-72", "Thais", "Rua 6", "(21)97264-1163"));
 	}
 
 }

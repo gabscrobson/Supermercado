@@ -15,6 +15,9 @@ public class JanelaPrincipal extends JFrame {
 
 	// Create the frame
 	public JanelaPrincipal() {
+		setVisible(true);
+		setResizable(false);
+		setTitle("Supermercado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -23,6 +26,7 @@ public class JanelaPrincipal extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// Cliente
 		JButton btnCliente = new JButton("Cliente");
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -33,6 +37,7 @@ public class JanelaPrincipal extends JFrame {
 		btnCliente.setBounds(27, 106, 113, 36);
 		contentPane.add(btnCliente);
 		
+		// Compra
 		JButton btnCompra = new JButton("Compra");
 		btnCompra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -42,6 +47,7 @@ public class JanelaPrincipal extends JFrame {
 		btnCompra.setBounds(162, 106, 113, 36);
 		contentPane.add(btnCompra);
 		
+		// Produto
 		JButton btnProduto = new JButton("Produto");
 		btnProduto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
