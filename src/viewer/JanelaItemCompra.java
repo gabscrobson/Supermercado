@@ -3,6 +3,7 @@ package viewer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -36,6 +37,9 @@ public class JanelaItemCompra extends AbstractViewer {
 	public JanelaItemCompra(CtrlIncluirCompra meuCtrl) {
 		super(meuCtrl);
         setResizable(false);
+		// Add icon image
+		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
+		setIconImage(imgIcon.getImage());
 		
 		setTitle("Adicionar Item");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

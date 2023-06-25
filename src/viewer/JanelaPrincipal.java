@@ -3,6 +3,7 @@ package viewer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,6 +21,9 @@ public class JanelaPrincipal extends AbstractViewer {
 	public JanelaPrincipal(CtrlPrograma meuCtrl) {
 		super(meuCtrl);
 		setResizable(false);
+		// Add icon image
+		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
+		setIconImage(imgIcon.getImage());
 		
 		setTitle("Supermercado");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,37 +34,41 @@ public class JanelaPrincipal extends AbstractViewer {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btPessoa = new JButton("Cliente");
-		btPessoa.addActionListener(new ActionListener() {
+		JButton btCliente = new JButton("Cliente");
+		btCliente.setFocusable(false);
+		btCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CtrlPrograma ctrl = (CtrlPrograma)getMeuControlador();
 				ctrl.iniciarManterClientes();
 			}
 		});
-		btPessoa.setBounds(37, 79, 89, 38);
-		contentPane.add(btPessoa);
+		btCliente.setBounds(37, 79, 89, 38);
+		contentPane.add(btCliente);
 		
-		JButton btAluno = new JButton("Compra");
-		btAluno.addActionListener(new ActionListener() {
+		JButton btCompra = new JButton("Compra");
+		btCompra.setFocusable(false);
+		btCompra.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CtrlPrograma ctrl = (CtrlPrograma)getMeuControlador();
 				ctrl.iniciarIncluirCompra();
 			}
 		});
-		btAluno.setBounds(160, 79, 89, 38);
-		contentPane.add(btAluno);
+		btCompra.setBounds(160, 79, 89, 38);
+		contentPane.add(btCompra);
 		
-		JButton btCurso = new JButton("Produto");
-		btCurso.addActionListener(new ActionListener() {
+		JButton btProduto = new JButton("Produto");
+		btProduto.setFocusable(false);
+		btProduto.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CtrlPrograma ctrl = (CtrlPrograma)getMeuControlador();
 				ctrl.iniciarManterProdutos();
 			}
 		});
-		btCurso.setBounds(283, 79, 89, 38);
-		contentPane.add(btCurso);
+		btProduto.setBounds(283, 79, 89, 38);
+		contentPane.add(btProduto);
 		
 		JButton btSair = new JButton("Sair");
+		btSair.setFocusable(false);
 		btSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CtrlPrograma ctrl = (CtrlPrograma)getMeuControlador();

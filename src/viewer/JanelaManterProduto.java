@@ -1,6 +1,7 @@
 package viewer;
 
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -25,6 +26,10 @@ public class JanelaManterProduto extends AbstractViewer {
 	public JanelaManterProduto(CtrlManterProdutos ctrl) {
 		super(ctrl);
         setResizable(false);
+		// Add icon image
+		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
+		setIconImage(imgIcon.getImage());
+		
 		setTitle("Cadastro de Produtos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

@@ -3,6 +3,7 @@ package viewer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -34,6 +35,9 @@ public class JanelaProduto extends AbstractViewer {
 	public JanelaProduto(AbstractCtrlProduto meuCtrl) {
 		super(meuCtrl);
         setResizable(false);
+		// Add icon image
+		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
+		setIconImage(imgIcon.getImage());
 		
 		setTitle("Produto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
