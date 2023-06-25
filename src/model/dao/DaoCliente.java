@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.Cliente;
 
-public class DaoCliente {
+public class DaoCliente extends AbstractDao {
     // Atributos estáticos
     private static ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
@@ -55,14 +55,8 @@ public class DaoCliente {
     }
 
     // Altera um cliente
-    public static void alterarCliente(Cliente clienteAntigo, Cliente clienteNovo) throws Exception {
-        if (DaoCliente.clientes.contains(clienteAntigo)) {
-            clienteAntigo.setNome(clienteNovo.getNome());
-            clienteAntigo.setCpf(clienteNovo.getCpf());
-            clienteAntigo.setEndereco(clienteNovo.getEndereco());
-            clienteAntigo.setTelefone(clienteNovo.getTelefone());
-        } else {
+    public static void alterarCliente(Cliente clienteAntigo) throws Exception {
+        if (!DaoCliente.clientes.contains(clienteAntigo))
             throw new Exception("Cliente não encontrado!");
-        }
     }
 }

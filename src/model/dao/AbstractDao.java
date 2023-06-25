@@ -13,9 +13,9 @@ import model.Produto;
 abstract public class AbstractDao {
     public static boolean objetosRecuperados = false;
 
-    final public static void armazenarObjetos() {
+    final public void armazenarObjetos() {
         try {
-			FileOutputStream arquivo = new FileOutputStream("C:/Users/gmta1/eclipse-workspace/Supermercado/temp/Objetos.bin");
+			FileOutputStream arquivo = new FileOutputStream("C:/Temp/Objetos.bin");
 			ObjectOutputStream oos = new ObjectOutputStream(arquivo);
             
             // Serializando objetos
@@ -34,7 +34,7 @@ abstract public class AbstractDao {
     public static void recuperarObjetos() {
         if (objetosRecuperados == false) {
             try {
-                FileInputStream arquivo = new FileInputStream("C:/Users/gmta1/eclipse-workspace/Supermercado/temp/Objetos.bin");
+                FileInputStream arquivo = new FileInputStream("C:/Temp/Objetos.bin");
                 ObjectInputStream ois = new ObjectInputStream(arquivo);
 
                 // Deserializando objetos e armazenando-os nos ArrayLists

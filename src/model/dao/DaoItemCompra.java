@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.ItemCompra;
 
-public class DaoItemCompra {
+public class DaoItemCompra extends AbstractDao {
     // Atributos estáticos
     private static ArrayList<ItemCompra> itensCompra = new ArrayList<ItemCompra>();
 

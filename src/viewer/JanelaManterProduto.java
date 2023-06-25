@@ -6,27 +6,26 @@ import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import controller.cliente.CtrlManterClientes;
-import model.Cliente;
+import controller.produto.CtrlManterProdutos;
+import model.Produto;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class JanelaManterCliente extends AbstractViewer {
+public class JanelaManterProduto extends AbstractViewer {
 
 	private JPanel                      contentPane;
-	private DefaultListModel<Cliente>   listaObjetos;
-	private JList<Cliente>              lstClientes; 
+	private DefaultListModel<Produto>   listaObjetos;
+	private JList<Produto>              lstProdutos; 
 
 	/**
 	 * Create the frame.
 	 */
-	public JanelaManterCliente(CtrlManterClientes ctrl) {
+	public JanelaManterProduto(CtrlManterProdutos ctrl) {
 		super(ctrl);
         setResizable(false);
-		setTitle("Cadastro de Clientes");
+		setTitle("Cadastro de Produtos");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -35,20 +34,15 @@ public class JanelaManterCliente extends AbstractViewer {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 				
-		lstClientes = new JList<Cliente>();
-		lstClientes.setBounds(24, 11, 382, 191);
-		contentPane.add(lstClientes);
-
-        // add scroll to lstClientes
-        JScrollPane scrollPane = new JScrollPane(lstClientes);
-        scrollPane.setBounds(24, 11, 382, 191);
-        contentPane.add(scrollPane);
+		lstProdutos = new JList<Produto>();
+		lstProdutos.setBounds(24, 11, 382, 191);
+		contentPane.add(lstProdutos);
 		
 		JButton btIncluir = new JButton("Incluir");
 		btIncluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
-				ctrl.iniciarIncluirCliente();
+				CtrlManterProdutos ctrl = (CtrlManterProdutos)getMeuControlador();
+				ctrl.iniciarIncluirProduto();
 			}
 		});
 		btIncluir.setBounds(24, 213, 89, 23);
@@ -57,13 +51,13 @@ public class JanelaManterCliente extends AbstractViewer {
 		JButton btAlterar = new JButton("Alterar");
 		btAlterar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cliente selecionado = (Cliente) lstClientes.getSelectedValue();
+				Produto selecionado = (Produto) lstProdutos.getSelectedValue();
 				if(selecionado == null) {
-					JOptionPane.showMessageDialog(null, "Seleciona um cliente");
+					JOptionPane.showMessageDialog(null, "Seleciona um produto");
 					return;
 				}
-				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
-				ctrl.iniciarAlterarCliente(selecionado);
+				CtrlManterProdutos ctrl = (CtrlManterProdutos)getMeuControlador();
+				ctrl.iniciarAlterarProduto(selecionado);
 			}
 		});
 		btAlterar.setBounds(123, 213, 89, 23);
@@ -72,13 +66,13 @@ public class JanelaManterCliente extends AbstractViewer {
 		JButton btExcluir = new JButton("Excluir");
 		btExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Cliente selecionado = (Cliente) lstClientes.getSelectedValue();
+				Produto selecionado = (Produto) lstProdutos.getSelectedValue();
 				if(selecionado == null) {
-					JOptionPane.showMessageDialog(null, "Seleciona um cliente");
+					JOptionPane.showMessageDialog(null, "Seleciona um produto");
 					return;
 				}
-				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
-				ctrl.iniciarExcluirCliente(selecionado);
+				CtrlManterProdutos ctrl = (CtrlManterProdutos)getMeuControlador();
+				ctrl.iniciarExcluirProduto(selecionado);
 			}
 		});
 		btExcluir.setBounds(222, 213, 89, 23);
@@ -87,7 +81,7 @@ public class JanelaManterCliente extends AbstractViewer {
 		JButton btSair = new JButton("Sair");
 		btSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
+				CtrlManterProdutos ctrl = (CtrlManterProdutos)getMeuControlador();
 				ctrl.encerrar();
 			}
 		});
@@ -95,10 +89,11 @@ public class JanelaManterCliente extends AbstractViewer {
 		contentPane.add(btSair);
 	}
 	
-	public void exibirClientes(Cliente[] conjClientes) {
-		this.listaObjetos = new DefaultListModel<Cliente>();
-		for(int i = 0; i < conjClientes.length; i++)
-			this.listaObjetos.addElement(conjClientes[i]);
-		this.lstClientes.setModel(this.listaObjetos);
+	public void exibirProdutos(Produto[] conjProdutos) {
+		this.listaObjetos = new DefaultListModel<Produto>();
+		for(int i = 0; i < conjProdutos.length; i++)
+			this.listaObjetos.addElement(conjProdutos[i]);
+		this.lstProdutos.setModel(this.listaObjetos);
 	}
 }
+

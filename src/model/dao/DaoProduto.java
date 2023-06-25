@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.Produto;
 
-public class DaoProduto {
+public class DaoProduto extends AbstractDao {
     // Atributos estáticos
     private static ArrayList<Produto> produtos = new ArrayList<Produto>();
 
@@ -58,16 +58,19 @@ public class DaoProduto {
     }
 
     // Altera um produto
-    public static void alterarProduto(Produto produtoAntigo, Produto produtoNovo) throws Exception {
-        if (DaoProduto.produtos.contains(produtoAntigo)) {
-            produtoAntigo.setNome(produtoNovo.getNome());
-            produtoAntigo.setPrecoAtual(produtoNovo.getPrecoAtual());
-            produtoAntigo.setCodigoDeBarras(produtoNovo.getCodigoDeBarras());
-        }
-        else
+    public static void alterarProduto(Produto produtoAntigo) throws Exception {
+        if (!DaoProduto.produtos.contains(produtoAntigo))
             throw new Exception("Produto não encontrado!");
     }
 
-    
+    // Checa se a lista de produtos está vazia
+    public static boolean estaVazia() {
+        return DaoProduto.produtos.isEmpty();
+    }
+
+    // Retorn o ultimo produto da lista
+    public static Produto getUltimoProduto() {
+        return DaoProduto.produtos.get(DaoProduto.produtos.size() - 1);
+    }
 
 }
