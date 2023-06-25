@@ -30,7 +30,7 @@ public class JanelaManterCliente extends AbstractViewer {
 		// Add icon image
 		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
 		setIconImage(imgIcon.getImage());
-		
+
 		setTitle("Cadastro de Clientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -56,7 +56,7 @@ public class JanelaManterCliente extends AbstractViewer {
 				ctrl.iniciarIncluirCliente();
 			}
 		});
-		btIncluir.setBounds(24, 213, 89, 23);
+		btIncluir.setBounds(24, 213, 89, 30);
 		contentPane.add(btIncluir);
 		
 		JButton btAlterar = new JButton("Alterar");
@@ -64,14 +64,14 @@ public class JanelaManterCliente extends AbstractViewer {
 			public void actionPerformed(ActionEvent e) {
 				Cliente selecionado = (Cliente) lstClientes.getSelectedValue();
 				if(selecionado == null) {
-					JOptionPane.showMessageDialog(null, "Seleciona um cliente");
+					JOptionPane.showMessageDialog(null, "Selecione um cliente");
 					return;
 				}
 				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
 				ctrl.iniciarAlterarCliente(selecionado);
 			}
 		});
-		btAlterar.setBounds(123, 213, 89, 23);
+		btAlterar.setBounds(123, 213, 89, 30);
 		contentPane.add(btAlterar);
 		
 		JButton btExcluir = new JButton("Excluir");
@@ -79,14 +79,14 @@ public class JanelaManterCliente extends AbstractViewer {
 			public void actionPerformed(ActionEvent e) {
 				Cliente selecionado = (Cliente) lstClientes.getSelectedValue();
 				if(selecionado == null) {
-					JOptionPane.showMessageDialog(null, "Seleciona um cliente");
+					JOptionPane.showMessageDialog(null, "Selecione um cliente");
 					return;
 				}
 				CtrlManterClientes ctrl = (CtrlManterClientes)getMeuControlador();
 				ctrl.iniciarExcluirCliente(selecionado);
 			}
 		});
-		btExcluir.setBounds(222, 213, 89, 23);
+		btExcluir.setBounds(222, 213, 89, 30);
 		contentPane.add(btExcluir);
 		
 		JButton btSair = new JButton("Sair");
@@ -96,7 +96,7 @@ public class JanelaManterCliente extends AbstractViewer {
 				ctrl.encerrar();
 			}
 		});
-		btSair.setBounds(321, 213, 89, 23);
+		btSair.setBounds(321, 213, 89, 30);
 		contentPane.add(btSair);
 	}
 	

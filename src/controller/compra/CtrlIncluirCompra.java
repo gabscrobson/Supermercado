@@ -44,6 +44,10 @@ public class CtrlIncluirCompra extends AbstractCtrl {
 
 	public void incluirCompra(Cliente cliente) {
 		try {
+			// Perguntar se o cliente vai querer CPF na nota fiscal
+			
+
+
             // Gerar nota fiscal
             float total = 0;
             String notaFiscal = "==========NOTA FISCAL==========\n";
@@ -55,7 +59,7 @@ public class CtrlIncluirCompra extends AbstractCtrl {
                 total += item.getProduto().getPrecoAtual() * item.getQuantidade();
                 notaFiscal += item + "\n";
             }
-            notaFiscal += "\n TOTAL: " + total + "\n";
+			notaFiscal += String.format("\n TOTAL: R$ %.2f\n", total);
             notaFiscal += "===============================\n";
 
 

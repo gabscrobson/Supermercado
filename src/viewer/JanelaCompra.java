@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -37,7 +38,7 @@ public class JanelaCompra extends AbstractViewer {
 		// Add icon image
 		ImageIcon imgIcon = new ImageIcon("assets\\icon.png");
 		setIconImage(imgIcon.getImage());
-		
+
 		setTitle("Compra");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 496, 300);
@@ -62,6 +63,11 @@ public class JanelaCompra extends AbstractViewer {
         lstItens = new JList<ItemCompra>();
 		lstItens.setBounds(10, 50, 462, 168);
 		contentPane.add(lstItens);
+
+		// add scroll to lstItens
+		JScrollPane scrollPane = new JScrollPane(lstItens);
+		scrollPane.setBounds(10, 50, 462, 168);
+		contentPane.add(scrollPane);
 		
 		JButton btOk = new JButton("Efetuar compra");
 		btOk.addActionListener(new ActionListener() {

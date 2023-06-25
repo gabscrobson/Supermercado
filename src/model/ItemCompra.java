@@ -56,6 +56,6 @@ public class ItemCompra implements Serializable{
     }
 
     public String toString() {
-        return this.getQuantidade() + "x " + this.getProduto().getNome() + " - R$ " + this.getPrecoTotal();
+        return this.getQuantidade() + "x " + this.getProduto().getNome() + " - R$ " + String.format("%.2f", this.getPrecoTotal());
     }
 }

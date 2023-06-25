@@ -73,6 +73,6 @@ public class Produto implements Serializable{
 
     // Métodos
     public String toString() {
-        return this.getNome() + " - " + this.getCodigoDeBarras() + " - R$ " + this.getPrecoAtual();
+        return this.getNome() + " - " + "R$ " + String.format("%.2f", this.getPrecoAtual()) + " - " + this.getCodigoDeBarras();
     }
 }
