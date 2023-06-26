@@ -41,7 +41,7 @@ public class JanelaCompra extends AbstractViewer {
 
 		setTitle("Compra");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 496, 300);
+		setBounds(100, 100, 496, 307);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,7 +78,7 @@ public class JanelaCompra extends AbstractViewer {
 				meuCtrl.incluirCompra(cliente);
 			}
 		});
-		btOk.setBounds(175, 229, 132, 23);
+		btOk.setBounds(175, 229, 132, 30);
 		contentPane.add(btOk);
 		
 		JButton btCancelar = new JButton("Cancelar");
@@ -88,7 +88,7 @@ public class JanelaCompra extends AbstractViewer {
 				meuCtrl.encerrar();
 			}
 		});
-		btCancelar.setBounds(328, 229, 144, 23);
+		btCancelar.setBounds(328, 229, 144, 30);
 		contentPane.add(btCancelar);
 		
 		JButton btnNewButton = new JButton("Adicionar produto");
@@ -97,7 +97,7 @@ public class JanelaCompra extends AbstractViewer {
                 meuCtrl.abrirJanelaItem();
 			}
 		});
-		btnNewButton.setBounds(10, 229, 144, 23);
+		btnNewButton.setBounds(10, 229, 144, 30);
 		contentPane.add(btnNewButton);
 	}
 

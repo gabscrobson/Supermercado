@@ -43,7 +43,7 @@ public class JanelaItemCompra extends AbstractViewer {
 		
 		setTitle("Adicionar Item");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 332, 189);
+		setBounds(100, 100, 309, 189);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -51,11 +51,11 @@ public class JanelaItemCompra extends AbstractViewer {
 		contentPane.setLayout(null);
 
         JLabel lblNewLabel = new JLabel("Produto");
-		lblNewLabel.setBounds(38, 31, 49, 14);
+		lblNewLabel.setBounds(10, 31, 49, 14);
 		contentPane.add(lblNewLabel);
         
 		cbProduto = new JComboBox<Produto>();
-		cbProduto.setBounds(157, 27, 120, 22);
+		cbProduto.setBounds(105, 27, 179, 22);
 		contentPane.add(cbProduto);
 
         for (Produto produto : DaoProduto.getProdutos()) {
@@ -63,11 +63,11 @@ public class JanelaItemCompra extends AbstractViewer {
         }
 		
 		JLabel lblNewLabel_1 = new JLabel("Quantidade");
-		lblNewLabel_1.setBounds(38, 74, 120, 14);
+		lblNewLabel_1.setBounds(10, 74, 120, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		tfQuantidade = new JTextField();
-		tfQuantidade.setBounds(157, 71, 120, 20);
+		tfQuantidade.setBounds(105, 71, 179, 20);
 		contentPane.add(tfQuantidade);
 		tfQuantidade.setColumns(10);
 		
@@ -89,7 +89,7 @@ public class JanelaItemCompra extends AbstractViewer {
 				meuCtrl.adicionarItem(produto, quantidade);
 			}
 		});
-		btOk.setBounds(38, 118, 89, 23);
+		btOk.setBounds(10, 118, 89, 23);
 		contentPane.add(btOk);
 		
 		JButton btCancelar = new JButton("Cancelar");
@@ -98,7 +98,7 @@ public class JanelaItemCompra extends AbstractViewer {
 				meuCtrl.fechar();
 			}
 		});
-		btCancelar.setBounds(188, 118, 89, 23);
+		btCancelar.setBounds(195, 118, 89, 23);
 		contentPane.add(btCancelar);
 	}
 }
